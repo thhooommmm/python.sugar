@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings>
+
+	<language id="name.sliceofpi.Python">
+		
+		<root-zone>sourcecode.python</root-zone>
+		<name>Python</name>
+		<detectors>
+			<extension>py</extension>
+		</detectors>
+		
+	</language>
+	
+</settings>

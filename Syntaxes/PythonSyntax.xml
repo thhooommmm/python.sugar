@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<syntax name="sourcecode.python">
+	<zones>
+
+        <zone name="support.module.python">
+            <starts-with>
+            <expression>\b(from)\s([a-zA-Z][a-zA-Z0-9_\.]+)\s</expression>
+                <capture number="1" name="keyword.control.python"/>
+                <capture number="2" name="variable.name.python"/>
+            </starts-with>
+            <ends-with>
+                <expression>(import)\s(\*|[a-zA-Z][a-zA-Z0-9_\, ]+)$</expression>
+                <capture number="1" name="keyword.control.python"/>
+                <capture number="2" name="variable.name.python"/>
+            </ends-with>
+        </zone>
+    
+        <zone name="support.module.python">
+            <expression>\b(import)\s(\*|[a-zA-Z][a-zA-Z0-9_\, ]+)$</expression>
+                <capture number="1" name="keyword.control.python"/>
+                <capture number="2" name="variable.name.python"/>
+        </zone>
+
+		<zone name="function.python">
+			<expression>(class)\s+([a-zA-Z_$]\w*)?\s*(\({0,1})(.*?)(\){0,1}):</expression>
+			<capture number="1" name="storage.type.function.python"/>
+			<capture number="2" name="name"/>
+			<capture number="3" name="punctuation.definition.parameters.begin"/>
+			<capture number="4" name="variable.parameter.function.python"/>
+			<capture number="5" name="punctuation.definition.parameters.end"/>
+		</zone>
+
+		<zone name="function.python">
+			<expression>\b(def)\s+([a-zA-Z_$]\w*)?\s*(\()(.*?)(\)):</expression>
+			<capture number="1" name="storage.type.function.python"/>
+			<capture number="2" name="name"/>
+			<capture number="3" name="punctuation.definition.parameters.begin"/>
+			<capture number="4" name="variable.parameter.function.python"/>
+			<capture number="5" name="punctuation.definition.parameters.end"/>
+		</zone>
+
+		<zone name="constant.numeric.python">
+			<expression>\b((0(x|X)[0-9a-fA-F]+)|([0-9]+(\.[0-9]+)?))\b</expression>
+		</zone>
+		<zone name="string.quoted.single.python">
+			<starts-with>
+				<expression>u'|u'''|'|'''</expression>
+				<capture number="0" name="punctuation.definition.string.begin.python"/>
+			</starts-with>
+			<ends-with>
+				<expression>'|'''</expression>
+				<capture number="0" name="punctuation.definition.string.end.python"/>
+			</ends-with>
+			<subzones>
+				<zone name="constant.character.escape.python">
+					<expression>%s|\\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)</expression>
+				</zone>
+			</subzones>
+		</zone>
+		<zone name="string.quoted.double.python">
+			<starts-with>
+				<expression>u"|u"""|"|"""</expression>
+				<capture number="0" name="punctuation.definition.string.begin.python"/>
+			</starts-with>
+			<ends-with>
+				<expression>"|"""</expression>
+				<capture number="0" name="punctuation.definition.string.end.python"/>
+			</ends-with>
+			<subzones>
+				<zone name="constant.character.escape.python">
+					<expression>%s|\\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]|37[0-7]?|[4-7][0-7]?|.)</expression>
+				</zone>
+			</subzones>
+		</zone>
+		<zone name="comment.python">
+		    <starts-with>
+				<expression>#</expression>
+				<capture number="0" name="punctuation.definition.begin"/>
+			</starts-with>
+			<ends-with>
+    			<expression>.*$\n?</expression>
+    			<capture number="0" name="punctuation.definition.end"/>
+    		</ends-with>
+		</zone>
+		<zone name="keyword.control.python">
+			<expression>\b(break|except|continue|elif|else|finally|for|if|import|from|return|switch|raise|try|while)\b</expression>
+		</zone>
+		<zone name="keyword.operator.python">
+			<expression>\b(del|in|is|and|or|with)\b</expression>
+		</zone>
+		<zone name="constant.language.boolean.true.python">
+			<expression>\bTrue\b</expression>
+		</zone>
+		<zone name="constant.language.boolean.false.python">
+			<expression>\bFalse\b</expression>
+		</zone>
+		<zone name="constant.language.null.python">
+			<expression>\bNone\b</expression>
+		</zone>
+		<zone name="variable.language.python">
+			<expression>\b(super|self)</expression>
+		</zone>
+		<zone name="support.class.python">
+			<expression>\b(object|property)\b</expression>
+		</zone>
+		<zone name="keyword.operator.python">
+			<expression>!|\$|%|&amp;|\*|\-\-|\-|\+\+|\+|~|===|==|=|!=|!==|&lt;=|>=|&lt;&lt;=|>>=|>>>=|&lt;>|&lt;|>|!|&amp;&amp;|\|\||\?\:|\*=|/=|%=|\+=|\-=|&amp;=|\^=|\b(in|type|is|del|and|or)\b</expression>
+		</zone>
+		<zone name="constant.language.python">
+			<expression>\b(Exception)\b</expression>
+		</zone>
+		<zone name="string.regexp.python">
+			<expression>\br[\'|\"](.*?)[\'|\"]</expression>
+			<capture number="1" name="punctuation.definition.string.begin.python"/>
+			<subzones>
+				<zone name="constant.character.escape.python">
+					<expression>\\.</expression>
+				</zone>
+			</subzones>
+		</zone>
+		<zone name="punctuation.terminator.statement.python">
+			<expression>\;</expression>
+		</zone>
+		<zone name="meta.delimiter.object.comma.python">
+			<expression>,[ |\t]*</expression>
+		</zone>
+		<zone name="meta.delimiter.method.period.python">
+			<expression>\.</expression>
+		</zone>
+		<zone name="meta.brace.curly.open.python">
+			<expression>\{</expression>
+		</zone>
+		<zone name="meta.brace.curly.close.python">
+			<expression>\}</expression>
+		</zone>
+		<zone name="meta.brace.round.python">
+			<expression>\(|\)</expression>
+		</zone>
+		<zone name="meta.brace.square.python">
+			<expression>\[|\]</expression>
+		</zone>
+	</zones>
+</syntax>
