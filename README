@@ -1,1 +1,2 @@
-2008-12-29 1425 [GMT -0600] - Converted the sugar into an Espresso project.
+2008-12-29 1425 [GMT-0600] - Converted the sugar into an Espresso project.
+2008-12-29 1437 [GMT-0600] - Fixed missing encoding attribute in xml docs, cleaned up css file.

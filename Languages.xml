@@ -2,7 +2,7 @@
 
 <settings>
 
-	<language id="name.sliceofpi.Python">
+	<language id="com.apocryphalcode.Python">
 		
 		<root-zone>sourcecode.python</root-zone>
 		<name>Python</name>
