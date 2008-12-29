@@ -112,15 +112,15 @@
 		<zone name="string.regexp.python">
 			<starts-wtih>
 				<expression>\br\'|\"</expression>
-				<!--><capture number="0" name="punctuation.string.regex.begin"/>-->
+				<!--capture number="0" name="punctuation.string.regex.begin"/-->
 			</starts-with>
 			<ends-with>
 				<expression>\'|\"</expression>
-				<!--<capture number="1" name="punctuation.string.regex.end"/>-->
+				<!--capture number="1" name="punctuation.string.regex.end"/-->
 			</ends-with>
-      <subzones>
+      <!--subzones>
         <include syntax="expression.regex"/>
-      </subzones>
+      </subzones-->
 		</zone>
 		<zone name="punctuation.terminator.statement.python">
 			<expression>\;</expression>
