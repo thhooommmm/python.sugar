@@ -110,9 +110,14 @@
 			<expression>\b(Exception)\b</expression>
 		</zone>
 		<zone name="string.regexp.python">
-			<expression>(\br[\'|\"]).*?([\'|\"])</expression>
-			<capture number="1" name="punctuation.definition.string.begin.python"/>
-			<capture number="2" name="punctuation.definition.string.end.python"/>
+			<starts-wtih>
+				<expression>\br[\'|\"</expression>
+				<capture number="0" name="punctuation.string.regex.begin"/>
+			</starts-with>
+			<ends-with>
+				<expression>[\'|\"]</expression>
+				<capture number="1" name="punctuation.string.regex.end"/>
+			</ends-with>
       <subzones>
         <include syntax="expression.regex"/>
       </subzones>
