@@ -110,13 +110,12 @@
 			<expression>\b(Exception)\b</expression>
 		</zone>
 		<zone name="string.regexp.python">
-			<expression>\br[\'|\"](.*?)[\'|\"]</expression>
+			<expression>(\br[\'|\"]).*?([\'|\"])</expression>
 			<capture number="1" name="punctuation.definition.string.begin.python"/>
-			<subzones>
-				<zone name="constant.character.escape.python">
-					<expression>\\.</expression>
-				</zone>
-			</subzones>
+			<capture number="2" name="punctuation.definition.string.end.python"/>
+      <subzones>
+        <include syntax="expression.regex"/>
+      </subzones>
 		</zone>
 		<zone name="punctuation.terminator.statement.python">
 			<expression>\;</expression>
