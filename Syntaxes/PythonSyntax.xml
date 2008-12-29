@@ -111,11 +111,11 @@
 		</zone>
 		<zone name="string.regexp.python">
 			<starts-wtih>
-				<expression>\br[\'|\"]</expression>
+				<expression>\br\'|\"</expression>
 				<capture number="0" name="punctuation.string.regex.begin"/>
 			</starts-with>
 			<ends-with>
-				<expression>[\'|\"]</expression>
+				<expression>\'|\"</expression>
 				<capture number="1" name="punctuation.string.regex.end"/>
 			</ends-with>
       <subzones>
