@@ -104,11 +104,26 @@
 		</zone>
 		<zone name="string.quoted.single.python">
 			<starts-with>
-				<expression>u{0,1}'|'''</expression>
+				<expression>u{0,1}'</expression>
 				<capture number="0" name="punctuation.definition.string.begin.python"/>
 			</starts-with>
 			<ends-with>
-				<expression>'|'''</expression>
+				<expression>'</expression>
+				<capture number="0" name="punctuation.definition.string.end.python"/>
+			</ends-with>
+			<subzones>
+				<zone name="constant.character.escape.python">
+					<expression>%s|\\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)</expression>
+				</zone>
+			</subzones>
+		</zone>
+		<zone name="string.quoted.single.python">
+			<starts-with>
+				<expression>u{0,1}'''</expression>
+				<capture number="0" name="punctuation.definition.string.begin.python"/>
+			</starts-with>
+			<ends-with>
+				<expression>'''</expression>
 				<capture number="0" name="punctuation.definition.string.end.python"/>
 			</ends-with>
 			<subzones>
@@ -119,11 +134,26 @@
 		</zone>
 		<zone name="string.quoted.double.python">
 			<starts-with>
-				<expression>u{0,1}"|"""</expression>
+				<expression>u{0,1}"</expression>
 				<capture number="0" name="punctuation.definition.string.begin.python"/>
 			</starts-with>
 			<ends-with>
-				<expression>"|"""</expression>
+				<expression>"</expression>
+				<capture number="0" name="punctuation.definition.string.end.python"/>
+			</ends-with>
+			<subzones>
+				<zone name="constant.character.escape.python">
+					<expression>%s|\\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]|37[0-7]?|[4-7][0-7]?|.)</expression>
+				</zone>
+			</subzones>
+		</zone>
+		<zone name="string.quoted.double.python">
+			<starts-with>
+				<expression>u{0,1}"""</expression>
+				<capture number="0" name="punctuation.definition.string.begin.python"/>
+			</starts-with>
+			<ends-with>
+				<expression>"""</expression>
 				<capture number="0" name="punctuation.definition.string.end.python"/>
 			</ends-with>
 			<subzones>
