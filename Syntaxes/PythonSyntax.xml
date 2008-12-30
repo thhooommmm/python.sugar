@@ -60,7 +60,7 @@
 		</zone>
 
     <!-- KEYWORD -->
-		<zone name="keyword.flow-control">
+		<zone name="keyword.control">
 			<expression>\b(break|except|continue|elif|else|finally|for|if|import|from|return|switch|raise|try|while)\b</expression>
 		</zone>
 		<zone name="keyword.operator">

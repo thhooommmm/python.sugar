@@ -22,7 +22,7 @@ support.module {
     color: #3B3A36;
 }
 
-function.python {
+support.function {
     color: #9D9D9F;
 }
 
@@ -34,7 +34,7 @@ name {
   color: #658323;
 }
 
-punctuation.definition.parameters.begin {
+punctuation.definition.parenthesis {
   color: #93CCE0;
 }
 

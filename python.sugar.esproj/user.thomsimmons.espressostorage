@@ -20,13 +20,7 @@
 			</dict>
 			<dict>
 				<key>DocumentURL</key>
-				<string>file://localhost/Users/thomsimmons/Projects/python.sugar/Syntaxes/PythonSyntax.xml</string>
-				<key>StateType</key>
-				<string>DefaultTab</string>
-			</dict>
-			<dict>
-				<key>DocumentURL</key>
-				<string>file://localhost/Users/thomsimmons/Projects/python.sugar/THEMES</string>
+				<string>file://localhost/Users/thomsimmons/Projects/python.sugar/python.css</string>
 				<key>StateType</key>
 				<string>DefaultTab</string>
 			</dict>
