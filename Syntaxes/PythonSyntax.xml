@@ -91,12 +91,13 @@
 		<!-- STRING -->
 		<zone name="string.regex">
 			<starts-with>
-				<expression>r['|"]</expression>
-				<capture number="0" name="punctuation.string.regex.begin"/>
+				<expression>(r)(['|"])</expression>
+				<capture number="1" name="punctuation.definition.string.modifier.python"/>
+				<capture number="2" name="punctuation.definition.string.regex.begin.python"/>
 			</starts-with>
 			<ends-with>
 				<expression>'|"</expression>
-				<capture number="0" name="punctuation.string.regex.end"/>
+				<capture number="0" name="punctuation.definition.string.regex.end.python"/>
 			</ends-with>
       <subzones>
         <include syntax="expression.regex" />
@@ -104,8 +105,9 @@
 		</zone>
 		<zone name="string.quoted.single.python">
 			<starts-with>
-				<expression>u{0,1}'</expression>
-				<capture number="0" name="punctuation.definition.string.begin.python"/>
+				<expression>(u{0,1})(')</expression>
+				<capture number="1" name="punctuation.definition.string.modifier.python"/>
+				<capture number="2" name="punctuation.definition.string.begin.python"/>
 			</starts-with>
 			<ends-with>
 				<expression>'</expression>
@@ -119,8 +121,9 @@
 		</zone>
 		<zone name="string.quoted.single.python">
 			<starts-with>
-				<expression>u{0,1}'''</expression>
-				<capture number="0" name="punctuation.definition.string.begin.python"/>
+				<expression>(u{0,1})(''')</expression>
+				<capture number="1" name="punctuation.definition.string.modifier.python"/>
+				<capture number="2" name="punctuation.definition.string.begin.python"/>
 			</starts-with>
 			<ends-with>
 				<expression>'''</expression>
@@ -134,8 +137,9 @@
 		</zone>
 		<zone name="string.quoted.double.python">
 			<starts-with>
-				<expression>u{0,1}"</expression>
-				<capture number="0" name="punctuation.definition.string.begin.python"/>
+				<expression>(u{0,1})(")</expression>
+				<capture number="1" name="punctuation.definition.string.modifier.python"/>
+				<capture number="2" name="punctuation.definition.string.begin.python"/>
 			</starts-with>
 			<ends-with>
 				<expression>"</expression>
@@ -149,8 +153,9 @@
 		</zone>
 		<zone name="string.quoted.double.python">
 			<starts-with>
-				<expression>u{0,1}"""</expression>
-				<capture number="0" name="punctuation.definition.string.begin.python"/>
+				<expression>(u{0,1})(""")</expression>
+				<capture number="1" name="punctuation.definition.string.modifier.python"/>
+				<capture number="2" name="punctuation.definition.string.begin.python"/>
 			</starts-with>
 			<ends-with>
 				<expression>"""</expression>
