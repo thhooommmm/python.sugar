@@ -27,7 +27,7 @@
     <!-- FUNCTION -->
 		<zone name="support.function.python">
 			<expression>(class)\s+([a-zA-Z_$]\w*)?\s*(\({0,1})(.*?)(\){0,1}):</expression>
-			<capture number="1" name="storage.type.function.python"/>
+			<capture number="1" name="storage.type.class.python"/>
 			<capture number="2" name="support.function.name"/>
 			<capture number="3" name="punctuation.definition.parameters.begin"/>
 			<capture number="4" name="variable.parameter.function.python"/>
