@@ -9,10 +9,5 @@
 			<extension>py</extension>
 		</detectors>
 	</language>
-	
-	<language id="com.apocryphalcode.Python.Regex">
-		<root-zone>sourcecode.python.regex</root-zone>
-		<name>Python Regular Expressions</name>
-	</language>
-	
+
 </settings>

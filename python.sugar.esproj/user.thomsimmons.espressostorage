@@ -8,5 +8,23 @@
 	<false/>
 	<key>com.macrabbit.Espresso.Workspace.DisclosureCollapsed</key>
 	<false/>
+	<key>com.macrabbit.Espresso.Workspace.Tabs</key>
+	<dict>
+		<key>Tabs</key>
+		<array>
+			<dict>
+				<key>DocumentURL</key>
+				<string>file://localhost/Users/thomsimmons/Projects/python.sugar/test.py</string>
+				<key>StateType</key>
+				<string>DefaultTab</string>
+			</dict>
+			<dict>
+				<key>DocumentURL</key>
+				<string>file://localhost/Users/thomsimmons/Projects/python.sugar/Languages.xml</string>
+				<key>StateType</key>
+				<string>DefaultTab</string>
+			</dict>
+		</array>
+	</dict>
 </dict>
 </plist>
