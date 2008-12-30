@@ -1,1 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<itemizer>
+    <recipe name="function.python.block">
+        <class>Block</class>
+        <start-selector>function.python.block.begin</start-selector>
+        <end-selector>function.python.block.end</end-selector>
+    </recipe>
+</itemizer>
