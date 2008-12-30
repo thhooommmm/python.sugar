@@ -93,7 +93,7 @@
 				<capture number="0" name="punctuation.string.regex.begin"/>
 			</starts-with>
 			<ends-with>
-				<expression>['|"]</expression>
+				<expression>'|"</expression>
 				<capture number="0" name="punctuation.string.regex.end"/>
 			</ends-with>
       <subzones>
@@ -102,11 +102,11 @@
 		</zone>
 		<zone name="string.quoted.single.python">
 			<starts-with>
-				<expression>[u'|u'''|'|''']</expression>
+				<expression>u'|u'''|'|'''</expression>
 				<capture number="0" name="punctuation.definition.string.begin.python"/>
 			</starts-with>
 			<ends-with>
-				<expression>['|''']</expression>
+				<expression>'|'''</expression>
 				<capture number="0" name="punctuation.definition.string.end.python"/>
 			</ends-with>
 			<subzones>
