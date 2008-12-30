@@ -2,10 +2,10 @@
 <syntax name="sourcecode.python">
 	<zones>
 
-		<!-- SUPPORT -->
+
     <zone name="support.module.python">
         <starts-with>
-        <expression>\b(from)\s([a-zA-Z][a-zA-Z0-9_\.]+)\s</expression>
+        <expression>(from)\s([a-zA-Z][a-zA-Z0-9_\.]+)\s</expression>
             <capture number="1" name="keyword.control.python"/>
             <capture number="2" name="variable.name.python"/>
         </starts-with>
@@ -16,7 +16,7 @@
         </ends-with>
     </zone>
     <zone name="support.module.python">
-        <expression>\b(import)\s(\*|[a-zA-Z][a-zA-Z0-9_\, ]+)$</expression>
+        <expression>(import)\s(\*|[a-zA-Z][a-zA-Z0-9_\, ]+)$</expression>
             <capture number="1" name="keyword.control.python"/>
             <capture number="2" name="variable.name.python"/>
     </zone>
@@ -24,9 +24,9 @@
 			<expression>\b(object|property)\b</expression>
 		</zone>
 
-		<!-- FUNCTION -->
+
 		<zone name="function.python">
-			<expression>\b(class)\s+([a-zA-Z_$]\w*)?\s*(\({0,1})(.*?)(\){0,1}):</expression>
+			<expression>(class)\s+([a-zA-Z_$]\w*)?\s*(\({0,1})(.*?)(\){0,1}):</expression>
 			<capture number="1" name="storage.type.function.python"/>
 			<capture number="2" name="name"/>
 			<capture number="3" name="punctuation.definition.parameters.begin"/>
@@ -35,7 +35,7 @@
 		</zone>
 
 		<zone name="function.python">
-			<expression>\b(def)\s+([a-zA-Z_$]\w*)?\s*(\()(.*?)(\)):</expression>
+			<expression>(def)\s+([a-zA-Z_$]\w*)?\s*(\()(.*?)(\)):</expression>
 			<capture number="1" name="storage.type.function.python"/>
 			<capture number="2" name="name"/>
 			<capture number="3" name="punctuation.definition.parameters.begin"/>
@@ -43,7 +43,7 @@
 			<capture number="5" name="punctuation.definition.parameters.end"/>
 		</zone>
 
-		<!-- COMMENT -->
+
 		<zone name="comment.python">
 		    <starts-with>
 				<expression>#</expression>
@@ -55,7 +55,7 @@
     		</ends-with>
 		</zone>
 
-		<!-- KEYWORD -->
+
 		<zone name="keyword.control.python">
 			<expression>\b(break|except|continue|elif|else|finally|for|if|import|from|return|switch|raise|try|while)\b</expression>
 		</zone>
@@ -66,7 +66,7 @@
 			<expression>!|\$|%|&amp;|\*|\-\-|\-|\+\+|\+|~|===|==|=|!=|!==|&lt;=|>=|&lt;&lt;=|>>=|>>>=|&lt;>|&lt;|>|!|&amp;&amp;|\|\||\?\:|\*=|/=|%=|\+=|\-=|&amp;=|\^=|\b(in|type|is|del|and|or)\b</expression>
 		</zone>
 
-		<!-- CONSTANT -->
+
 		<zone name="constant.language.boolean.true.python">
 			<expression>\bTrue\b</expression>
 		</zone>
@@ -83,7 +83,7 @@
 			<expression>\b((0(x|X)[0-9a-fA-F]+)|([0-9]+(\.[0-9]+)?))\b</expression>
 		</zone>
 	
-		<!-- VARIABLE -->
+
 		<zone name="variable.language.python">
 			<expression>\b(super|self)</expression>
 		</zone>
@@ -91,11 +91,11 @@
 		<!-- STRING -->
 		<zone name="string.regex">
 			<starts-wtih>
-				<expression>\br[\'|\"]</expression>
+				<expression>r['|"]</expression>
 				<capture number="0" name="punctuation.string.regex.begin"/>
 			</starts-with>
 			<ends-with>
-				<expression>[\'|\"]</expression>
+				<expression>['|"]</expression>
 				<capture number="0" name="punctuation.string.regex.end"/>
 			</ends-with>
       <subzones>
@@ -104,11 +104,11 @@
 		</zone>
 		<zone name="string.quoted.single.python">
 			<starts-with>
-				<expression>\b[u\'|u\'\'\'|\'|\'\'\']</expression>
+				<expression>[u'|u'''|'|''']</expression>
 				<capture number="0" name="punctuation.definition.string.begin.python"/>
 			</starts-with>
 			<ends-with>
-				<expression>[\'|\'\'\']</expression>
+				<expression>['|''']</expression>
 				<capture number="0" name="punctuation.definition.string.end.python"/>
 			</ends-with>
 			<subzones>
@@ -119,11 +119,11 @@
 		</zone>
 		<zone name="string.quoted.double.python">
 			<starts-with>
-				<expression>[u\"|u\"\"\"|\"|\"\"\"]</expression>
+				<expression>[u"|u"""|"|"""]</expression>
 				<capture number="0" name="punctuation.definition.string.begin.python"/>
 			</starts-with>
 			<ends-with>
-				<expression>[\"|\"\"\"]</expression>
+				<expression>["|"""]</expression>
 				<capture number="0" name="punctuation.definition.string.end.python"/>
 			</ends-with>
 			<subzones>
