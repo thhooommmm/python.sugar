@@ -19,3 +19,4 @@ class TestPy(object):
     test_double_quote = u"""double 
                             quote 
                             string"""
+    return False if x is not True else return True
