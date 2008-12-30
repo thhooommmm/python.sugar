@@ -2,6 +2,7 @@
 <syntax name="sourcecode.python">
 	<zones>
 
+    <!-- SUPPORT -->
     <zone name="support.module.python">
         <starts-with>
         <expression>(from)\s([a-zA-Z][a-zA-Z0-9_\.]+)\s</expression>
@@ -23,6 +24,7 @@
 			<expression>\b(object|property)\b</expression>
 		</zone>
 
+    <!-- FUNCTION -->
 		<zone name="function.python">
 			<expression>(class)\s+([a-zA-Z_$]\w*)?\s*(\({0,1})(.*?)(\){0,1}):</expression>
 			<capture number="1" name="storage.type.function.python"/>
@@ -41,7 +43,7 @@
 			<capture number="5" name="punctuation.definition.parameters.end"/>
 		</zone>
 
-
+    <!-- COMMENT -->
 		<zone name="comment.python">
 		    <starts-with>
 				<expression>#</expression>
@@ -53,7 +55,7 @@
     		</ends-with>
 		</zone>
 
-
+    <!-- KEYWORD -->
 		<zone name="keyword.control.python">
 			<expression>\b(break|except|continue|elif|else|finally|for|if|import|from|return|switch|raise|try|while)\b</expression>
 		</zone>
@@ -64,7 +66,7 @@
 			<expression>!|\$|%|&amp;|\*|\-\-|\-|\+\+|\+|~|===|==|=|!=|!==|&lt;=|>=|&lt;&lt;=|>>=|>>>=|&lt;>|&lt;|>|!|&amp;&amp;|\|\||\?\:|\*=|/=|%=|\+=|\-=|&amp;=|\^=|\b(in|type|is|del|and|or)\b</expression>
 		</zone>
 
-
+    <!-- CONSTANT -->
 		<zone name="constant.language.boolean.true.python">
 			<expression>\bTrue\b</expression>
 		</zone>
@@ -81,7 +83,7 @@
 			<expression>\b((0(x|X)[0-9a-fA-F]+)|([0-9]+(\.[0-9]+)?))\b</expression>
 		</zone>
 	
-
+    <!-- VARIABLE -->
 		<zone name="variable.language.python">
 			<expression>\b(super|self)</expression>
 		</zone>
