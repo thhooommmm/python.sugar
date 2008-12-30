@@ -2,7 +2,6 @@
 <syntax name="sourcecode.python">
 	<zones>
 
-
     <zone name="support.module.python">
         <starts-with>
         <expression>(from)\s([a-zA-Z][a-zA-Z0-9_\.]+)\s</expression>
@@ -23,7 +22,6 @@
 		<zone name="support.class.python">
 			<expression>\b(object|property)\b</expression>
 		</zone>
-
 
 		<zone name="function.python">
 			<expression>(class)\s+([a-zA-Z_$]\w*)?\s*(\({0,1})(.*?)(\){0,1}):</expression>
@@ -90,7 +88,7 @@
 
 		<!-- STRING -->
 		<zone name="string.regex">
-			<starts-wtih>
+			<starts-with>
 				<expression>r['|"]</expression>
 				<capture number="0" name="punctuation.string.regex.begin"/>
 			</starts-with>
