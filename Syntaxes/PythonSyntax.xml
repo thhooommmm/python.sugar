@@ -102,11 +102,11 @@
 		</zone>
 		<zone name="string.quoted.single.python">
 			<starts-with>
-				<expression>u'|u'''|'|'''</expression>
+				<expression>u{0,1}'{1,3}</expression>
 				<capture number="0" name="punctuation.definition.string.begin.python"/>
 			</starts-with>
 			<ends-with>
-				<expression>'|'''</expression>
+				<expression>'{1,3}</expression>
 				<capture number="0" name="punctuation.definition.string.end.python"/>
 			</ends-with>
 			<subzones>
@@ -117,11 +117,11 @@
 		</zone>
 		<zone name="string.quoted.double.python">
 			<starts-with>
-				<expression>[u"|u"""|"|"""]</expression>
+				<expression>u{0,1}"{1,3}</expression>
 				<capture number="0" name="punctuation.definition.string.begin.python"/>
 			</starts-with>
 			<ends-with>
-				<expression>["|"""]</expression>
+				<expression>"{1,3}</expression>
 				<capture number="0" name="punctuation.definition.string.end.python"/>
 			</ends-with>
 			<subzones>
