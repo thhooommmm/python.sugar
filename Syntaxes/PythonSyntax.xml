@@ -16,26 +16,52 @@
 		  <expression>\b(class|def)\s[^\:]*?$</expression>
 		</zone>
 
-		<zone name="string.quoted">
+		<zone name="string.quoted.single">
 			<starts-with>
-				<expression>(u?)([\'\"]{3})</expression>
+				<expression>(u?)([\']{3})</expression>
 				<capture number="1" name="punctuation.definition.modifier"/>
 				<capture number="2" name="punctuation.string.begin"/>
 			</starts-with>
 			<ends-with>
-				<expression>([\'\"]{3})</expression>
+				<expression>([\']{3})</expression>
 				<capture number="1" name="punctuation.string.end"/>
 			</ends-with>
+			<subzones>
+                <zone name="escape">
+                    <expression>((\%[sdif])|(\\))</expression>
+                    <capture number="2" name="character"/>
+                    <capture number="3" name="literal.character.escape.backslash"/>
+                 </zone>
+			</subzones>
 		</zone>
-		
-		<zone name="string.quoted">
+
+		<zone name="string.quoted.double">
 			<starts-with>
-				<expression>(r)([\'\"])</expression>
+				<expression>(u?)([\"]{3})</expression>
 				<capture number="1" name="punctuation.definition.modifier"/>
 				<capture number="2" name="punctuation.string.begin"/>
 			</starts-with>
 			<ends-with>
-				<expression>([\'\"])</expression>
+				<expression>([\"]{3})</expression>
+				<capture number="1" name="punctuation.string.end"/>
+			</ends-with>
+			<subzones>
+                <zone name="escape">
+                    <expression>((\%[sdif])|(\\))</expression>
+                    <capture number="2" name="character"/>
+                    <capture number="3" name="literal.character.escape.backslash"/>
+                 </zone>
+			</subzones>
+		</zone>
+		
+		<zone name="string.quoted.regex">
+			<starts-with>
+				<expression>(r)(\'|\")</expression>
+				<capture number="1" name="punctuation.definition.modifier"/>
+				<capture number="2" name="punctuation.string.begin"/>
+			</starts-with>
+			<ends-with>
+				<expression>(\'|\")</expression>
 				<capture number="1" name="punctuation.string.end"/>
 			</ends-with>
 			<subzones>
@@ -43,22 +69,41 @@
 			</subzones>
 		</zone>
 
-		<zone name="string.quoted">
+		<zone name="string.quoted.single">
 			<starts-with>
-				<expression>(u?)([\'\"])</expression>
+				<expression>(u?)(\')</expression>
 				<capture number="1" name="punctuation.definition.modifier"/>
 				<capture number="2" name="punctuation.string.begin"/>
 			</starts-with>
 			<ends-with>
-				<expression>([\'\"])</expression>
+				<expression>(\')</expression>
 				<capture number="1" name="punctuation.string.end"/>
 			</ends-with>
 			<subzones>
-        <zone name="escape">
-            <expression>((\%[sdif])|(\\))</expression>
-            <capture number="2" name="character"/>
-            <capture number="3" name="literal.character.escape.backslash"/>
-         </zone>
+                <zone name="escape">
+                    <expression>((\%[sdif])|(\\))</expression>
+                    <capture number="2" name="character"/>
+                    <capture number="3" name="literal.character.escape.backslash"/>
+                 </zone>
+			</subzones>
+		</zone>
+
+		<zone name="string.quoted.double">
+			<starts-with>
+				<expression>(u?)(\")</expression>
+				<capture number="1" name="punctuation.definition.modifier"/>
+				<capture number="2" name="punctuation.string.begin"/>
+			</starts-with>
+			<ends-with>
+				<expression>(\")</expression>
+				<capture number="1" name="punctuation.string.end"/>
+			</ends-with>
+			<subzones>
+                <zone name="escape">
+                    <expression>((\%[sdif])|(\\))</expression>
+                    <capture number="2" name="character"/>
+                    <capture number="3" name="literal.character.escape.backslash"/>
+                 </zone>
 			</subzones>
 		</zone>
 		
@@ -149,7 +194,7 @@
     </zone>
     
     <zone name="tag">
-      <expression>([a-zA-Z_][a-zA-Z_0-9\.]*?) (\=)</expression>
+      <expression>([a-zA-Z_][a-zA-Z_0-9\.]*?)\s*?(\=)</expression>
       <capture number="1" name="name"/>
       <capture number="2" name="operator"/>
     </zone>
@@ -212,7 +257,7 @@
   			<capture number="4" name="class-reference"/>
   		</zone>
 		  <zone name="variable.name">
-		    <expression>\b(\w+)\b</expression>
+		    <expression>\w+</expression>
 		  </zone>
 		  <include collection="punctuation"/>
 		  <include syntax="keyword.operator"/>

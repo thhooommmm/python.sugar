@@ -35,15 +35,38 @@
     	</subrecipes>
     </recipe>
 -->
-		<recipe name="value-assignment">
-				<class>Tuple</class>
-				<start-selector>tag.open:capture(name)</start-selector>
-				<end-selector>tag.close:capture(name)</end-selector>
-		</recipe>
 
 		<recipe name="value-assignment">
 				<class>Variable</class>
 				<selector>tag:has-child(name:capture(name))</selector>
+				<subrecipes>
+            		<recipe name="value-assignment">
+            				<class>Tuple</class>
+            				<start-selector>tag.open:has-child(name:capture(name))</start-selector>
+            				<end-selector>tag.close:capture(name)</end-selector>
+            		</recipe>
+            		<recipe name="value-assignment">
+            				<class>Variable</class>
+            				<selector>tag:has-child(name:capture(name))</selector>
+            		</recipe>
+            	</subrecipes>
+		</recipe>
+
+		<recipe name="value-assignment">
+				<class>Tuple</class>
+				<start-selector>tag.open:has-child(name:capture(name))</start-selector>
+				<end-selector>tag.close:capture(name)</end-selector>
+				<subrecipes>
+            		<recipe name="value-assignment">
+            				<class>Tuple</class>
+            				<start-selector>tag.open:has-child(name:capture(name))</start-selector>
+            				<end-selector>tag.close:capture(name)</end-selector>
+            		</recipe>
+            		<recipe name="value-assignment">
+            				<class>Variable</class>
+            				<selector>tag:has-child(name:capture(name))</selector>
+            		</recipe>
+            	</subrecipes>
 		</recipe>
 
 </itemizer>
