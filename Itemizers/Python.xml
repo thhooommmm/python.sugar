@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!-- itemizer>
-    <recipe name="function.python.block">
-        <class>Block</class>
-        <start-selector>function.python.block.begin</start-selector>
-        <end-selector>function.python.block.end</end-selector>
+<itemizer>
+<!--		
+		<recipe name="block">
+		  <class>Class</class>
+		  <start-selector>selector.css.meta.class:has-child(name:capture(name))</start-selector>
+		  <end-selector>whitespace+whitespace</end-selector>
+		  <subrecipes>
+    		<recipe name="value-assignment">
+    				<class>Tuple</class>
+    				<start-selector>tag.open:capture(name)</start-selector>
+    				<end-selector>tag.close:capture(name)</end-selector>
+    		</recipe>
+    		<recipe name="value-assignment">
+    				<class>Variable</class>
+    				<selector>tag:has-child(name:capture(name))</selector>
+    		</recipe>
+    	</subrecipes>
     </recipe>
-</itemizer -->
+
+    <recipe name="block">
+      <class>Function</class>
+      <start-selector>selector.css.support.function:capture(name)</start-selector>
+      <end-selector>whitespace+whitespace</end-selector>
+		  <subrecipes>
+    		<recipe name="value-assignment">
+    				<class>Tuple</class>
+    				<start-selector>tag.open:capture(name)</start-selector>
+    				<end-selector>tag.close:capture(name)</end-selector>
+    		</recipe>
+    		<recipe name="value-assignment">
+    				<class>Variable</class>
+    				<selector>tag:has-child(name:capture(name))</selector>
+    		</recipe>
+    	</subrecipes>
+    </recipe>
+-->
+		<recipe name="value-assignment">
+				<class>Tuple</class>
+				<start-selector>tag.open:capture(name)</start-selector>
+				<end-selector>tag.close:capture(name)</end-selector>
+		</recipe>
+
+		<recipe name="value-assignment">
+				<class>Variable</class>
+				<selector>tag:has-child(name:capture(name))</selector>
+		</recipe>
+
+</itemizer>

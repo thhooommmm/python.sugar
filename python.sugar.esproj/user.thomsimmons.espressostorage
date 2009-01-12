@@ -14,13 +14,19 @@
 		<array>
 			<dict>
 				<key>DocumentURL</key>
-				<string>file://localhost/Users/thomsimmons/Projects/python.sugar/test.py</string>
+				<string>file://localhost/Users/thomsimmons/Projects/espresso/sugars/python.sugar/tests/test.py</string>
 				<key>StateType</key>
 				<string>DefaultTab</string>
 			</dict>
 			<dict>
 				<key>DocumentURL</key>
-				<string>file://localhost/Users/thomsimmons/Projects/python.sugar/python.css</string>
+				<string>file://localhost/Users/thomsimmons/Projects/espresso/sugars/python.sugar/Syntaxes/PythonSyntax.xml</string>
+				<key>StateType</key>
+				<string>DefaultTab</string>
+			</dict>
+			<dict>
+				<key>DocumentURL</key>
+				<string>file://localhost/Users/thomsimmons/Projects/espresso/sugars/python.sugar/Itemizers/Python.xml</string>
 				<key>StateType</key>
 				<string>DefaultTab</string>
 			</dict>

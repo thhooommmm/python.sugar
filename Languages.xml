@@ -2,12 +2,26 @@
 
 <settings>
 
-	<language id="com.apocryphalcode.Python">
+	<language id="org.sliceofpi.Python">
+		<syntax-zone>sourcecode.python</syntax-zone>
 		<root-zone>sourcecode.python</root-zone>
 		<name>Python</name>
 		<detectors>
-			<extension>py</extension>
+			<extension casesensitive="false">py</extension>
+			<match-content lines="1">^#![\w\/ ]*?python$</match-content>
 		</detectors>
 	</language>
 
+	<!--meta>
+		<name>Python</name>
+		<description>A sugar for doing development in the Python programming language.</description>
+		<author>Thom Simmons</author>
+		<identifier>org.sliceofpi.Sugar.Python</identifier>
+		<version status="preview">1</version>
+		<download format="git">git://github.com/sliceofpi/python.sugar.git</download>
+		<url>http://github.com/sliceofpi/python.sugar</url>
+		<dependencies>
+			<dependency id="name.elliottcable.Sugar.Regex">Regex</dependency>
+		</dependencies>
+	</meta-->
 </settings>
