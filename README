@@ -5,3 +5,4 @@ regex.sugar - git://github.com/elliottcable/regex.sugar.git
 2008-12-29 1437 [GMT-0600] - Fixed missing encoding attribute in xml docs, cleaned up css file.
 2008-12-29 1719 [GMT-0600] - Added Regular Expression Highlighting to Python Strings. Fixed Crashing bug from bad captures in Espresso.
 2008-12-29 1836 [GMT-0600] - Resolved a bug (misspelling of `with` in a `starts-with` element) to enable support for regular expression highlighting using elliotcable's regex sugar.
+2009-01-11 2309 [GMT-0600] - Rewrote a large portion of the entire Sugar. Uses syntaxes to match the default sugars for better syntax coloring.
