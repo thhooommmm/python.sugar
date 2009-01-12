@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <syntax name="sourcecode.python">
 	<zones>
-
+<!--
     <zone name="punctuation.definition.end">
       <expression>\n(?=\nclass)</expression>
       <capture number="0" name="class"/>
@@ -11,7 +11,7 @@
       <expression>(?=\ndef)</expression>
       <capture number="0" name="function"/>
     </zone>
-	
+-->
 		<zone name="invalid">
 		  <expression>\b(class|def)\s[^\:]*?$</expression>
 		</zone>
@@ -54,11 +54,11 @@
 				<capture number="1" name="punctuation.string.end"/>
 			</ends-with>
 			<subzones>
-                <zone name="escape">
-                    <expression>((\%[sdif])|(\\))</expression>
-                    <capture number="2" name="character"/>
-                    <capture number="3" name="literal.character.escape.backslash"/>
-                 </zone>
+        <zone name="escape">
+            <expression>((\%[sdif])|(\\))</expression>
+            <capture number="2" name="character"/>
+            <capture number="3" name="literal.character.escape.backslash"/>
+         </zone>
 			</subzones>
 		</zone>
 		
@@ -131,13 +131,13 @@
     </zone>
 -->
   	<zone name="tag.open">
-  	    <expression>([a-zA-Z_]+)\s*?(\=)\s*?((\()|(\[)|(\{))</expression>
+  	    <expression>([a-zA-Z_]+|\s+)(\s*?(\=)\s*){0,1}((\()|(\[)|(\{))</expression>
   	    <capture number="1" name="variable.name"/>
   	    <capture number="2" name="keyword.operator"/>
-  	    <capture number="3" name="punctuation.definition.begin"/>
-  	    <capture number="4" name="punctuation.definition.open.round"/>
-  	    <capture number="5" name="punctuation.definition.open.square"/>
-  	    <capture number="6" name="punctuation.definition.open.curly"/>
+  	    <capture number="4" name="punctuation.definition.begin"/>
+  	    <capture number="5" name="punctuation.definition.open.round"/>
+  	    <capture number="6" name="punctuation.definition.open.square"/>
+  	    <capture number="7" name="punctuation.definition.open.curly"/>
     </zone>
 
     <zone name="tag.close">
